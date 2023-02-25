@@ -1,66 +1,79 @@
 import styled from "styled-components";
 
 const CardLayout = styled.div`
+  height: 100px;
+
   display: grid;
-  grid-template:
-        "a a a" 40px
-        "b c c" 40px
-        "b c c" 40px / 1fr 2fr 1fr;
-  border-radius: 8px;
-  background-color: #414141;
-  margin-bottom: 1rem;
-  padding: 5px;
-`
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 10fr 1fr;
+  gap: 8px 5px;
+
+  @media (max-width: 475px) {
+    width: 260px;
+  }
+`;
 
 const CardButton = styled.span`
-  padding: 5px;
-  height: 12vh;
+  height: 4vh;
   cursor: pointer;
-`
+`;
 
 const Column = styled.div`
-display: flex;
-flex-direction: column;
+  display: flex;
+  flex-direction: column;
 `;
 
 const ColumnIcon = styled.div`
- display: flex;
- flex-direction: column;
- height: 100%;
+  display: flex;
+  flex-direction: column;
 `;
 
 const Row = styled.div`
- display: flex;
- flex-direction: row;
- justify-content: space-around;
- padding-left: 10px;
+  display: flex;
+  flex-direction: row;
+
+  @media (max-width: 475px) {
+    width: 175px;
+    overflow: auto;
+  }
 `;
 
 const Title = styled.span`
   font-size: large;
   font-weight: bold;
   text-align: left;
-  padding: 5px;
-`
+
+  @media (max-width: 475px) {
+    font-size: 4vw;
+  }
+`;
 
 const Topic = styled.span`
-  color: #4DD0E1;
+  color: #4dd0e1;
   font-size: small;
   text-align: center;
+  padding: 2px;
+`;
+
+const Icon = styled.img`
+  width: 1rem;
+`;
+
+const Image = styled.img`
+  width: 5rem;
+  border-style: "outset";
+  border-radius: 12px;
   padding: 5px;
-  width: fit-content;
-  border-radius: 10%;
 `;
 
-const Icon = styled.img `
-  width: 2rem;
-`;
-
-export {CardLayout,
+export {
+  CardLayout,
   CardButton,
   Column,
   ColumnIcon,
   Row,
   Title,
   Topic,
-  Icon }
+  Icon,
+  Image,
+};

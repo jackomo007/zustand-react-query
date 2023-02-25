@@ -19,8 +19,8 @@ const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
-        {publicRoutes.map(({path, component: Component}) => (
-          <Route path={path} element={<Component/>} /> // warning
+        {publicRoutes.map(({path, component: Component}, index) => (
+          <Route key={index} path={path} element={<Component/>} /> // warning
         ))}
       </Routes>
     </BrowserRouter>
