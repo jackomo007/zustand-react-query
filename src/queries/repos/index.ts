@@ -5,16 +5,12 @@ import { Repo } from "./types"
 const getRepos = async (ctx: QueryFunctionContext) => {
     const [, userId] = ctx.queryKey
     const {data} = await api.get<Repo[]>(`/users/${userId}/repos`)
-
     return data
 }
 
 const getRepo = async (ctx: QueryFunctionContext) => {
     const [, userId, repoName] = ctx.queryKey
-    
     const {data} = await api.get<Repo[]>(`/repos/${userId}/${repoName}`)
-    console.log(userId, repoName, data);
-
     return data
 }
 
